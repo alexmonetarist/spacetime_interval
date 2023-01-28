@@ -38,8 +38,8 @@ def main():
             plt.plot(worldline[1], worldline[0])
             plt.ylabel("t (s)")
             plt.xlabel("x (m)")
-            plt.xlim([x1 - 10**(np.floor(np.log10(x1))), x2 + 10**(np.floor(np.log10(x2)))])
-            plt.ylim([t1 - 10**(np.floor(np.log10(t1))), t2 + 10**(np.floor(np.log10(t2)))])
+            plt.xlim([x1 - 10**(np.floor(np.log10(np.abs(x1)))), x2 + 10**(np.floor(np.log10(np.abs(x2))))])
+            plt.ylim([t1 - 10**(np.floor(np.log10(np.abs(t1)))), t2 + 10**(np.floor(np.log10(np.abs(t2))))])
             plt.show()
            
     except: 
