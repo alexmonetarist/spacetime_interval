@@ -33,11 +33,15 @@ def main():
         else:
             print(f"Rumtidsavståndet är rumslikt och {spacetime_interval(worldline)} meter.")
 
-        if input("Vill du visualisera rumtidsavståndet grafiskt? (J/N) \n").lower() != 'n':
+        if input("Vill du visualisera rumtidsavståndet? (J/N) \n").lower() != 'n':
+            #Plotting the interval in a separate window
+            plt.plot(worldline[1], worldline[0])
             plt.ylabel("t (s)")
             plt.xlabel("x (m)")
-            plt.plot(worldline[1], worldline[0])
+            plt.xlim([x1 - 10**(np.floor(np.log10(x1))), x2 + 10**(np.floor(np.log10(x2)))])
+            plt.ylim([t1 - 10**(np.floor(np.log10(t1))), t2 + 10**(np.floor(np.log10(t2)))])
             plt.show()
+           
 
     except: 
         print("Endast reella koordinater är möjliga!")
