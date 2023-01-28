@@ -42,7 +42,6 @@ def main():
             plt.ylim([t1 - 10**(np.floor(np.log10(t1))), t2 + 10**(np.floor(np.log10(t2)))])
             plt.show()
            
-
     except: 
         print("Endast reella koordinater är möjliga!")
 
